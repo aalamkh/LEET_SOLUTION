@@ -1,0 +1,50 @@
+The algorithm's intuition is to find the majority element in an array efficiently. A majority element is an element that appears more than half the time in the array.
+
+The algorithm achieves this with two main components:
+
+It starts by assuming that the first element in the array is the candidate for the majority element. It then goes through the array, incrementing a count each time it encounters this candidate element and decrementing the count when it finds a different element. If the count ever reaches zero, it resets the candidate to the current element. This step is based on the intuition that if the majority element exists, it will eventually dominate other elements and become the final candidate.
+
+After finding the candidate, it goes through the array once again to count how many times the candidate element appears. If it appears more than half of the time, it is validated as the majority element.
+
+The algorithm's efficiency comes from the fact that it processes the array in two passes without using additional data structures. This is possible because the majority element, by definition, will have a count greater than all other elements combined, making it the final candidate.
+
+This algorithm's intuition is grounded in the concept that the majority element will emerge as the most frequently occurring element as we process the array, and this approach helps us efficiently identify it.
+
+Complexity
+Time complexity:
+O(n)
+
+Space complexity:
+O(1)
+
+Code
+function majorityElement(nums) {
+    let count = 0;
+    let candidate = null;
+    
+    for (let num of nums) {
+        if (count === 0) {
+            candidate = num;
+        }
+        
+        if (num === candidate) {
+            count++;
+        } else {
+            count--;
+        }
+    }
+    
+    count = 0; // Reset the count
+    
+    for (let num of nums) {
+        if (num === candidate) {
+            count++;
+        }
+    }
+    
+    if (count > nums.length / 2) {
+        return candidate;
+    } else {
+        return null; // No majority element found
+    }
+}
