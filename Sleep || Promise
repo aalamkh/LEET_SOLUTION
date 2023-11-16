@@ -1,0 +1,13 @@
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+// Example usage:
+async function exampleUsage() {
+    console.log("Start sleeping...");
+    await sleep(2000); // Sleep for 2000 milliseconds (2 seconds)
+    console.log("Awake now!");
+}
+
+// Call the example usage function
+exampleUsage();
