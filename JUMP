@@ -1,0 +1,12 @@
+function canJump(nums) {
+    let maxReach = 0;
+    
+    for (let i = 0; i < nums.length; i++) {
+        if (i > maxReach) {
+            return false; // You've encountered a gap you can't jump across.
+        }
+        maxReach = Math.max(maxReach, i + nums[i]);
+    }
+    
+    return maxReach >= nums.length - 1; // Can you reach the end?
+}
