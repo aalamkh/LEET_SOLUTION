@@ -1,0 +1,59 @@
+Problem Description
+You are given an array of numbers, and you need to rotate the array to the right by 'k' steps. This means the last 'k' elements of the array move to the front while the rest shift to the right.
+
+Example:
+Suppose you have the array: [1, 2, 3, 4, 5, 6, 7] and you need to rotate it by 3 steps (k = 3). After rotation, the array should become: [5, 6, 7, 1, 2, 3, 4].
+
+Step-by-Step Solution (in JavaScript):
+
+Check for Valid Input:
+
+Ensure that the input array is not empty and 'k' is a positive integer.
+Determine the Effective Rotation:
+
+Since rotating an array by its length or multiples of its length doesn't change the array, calculate the effective rotation as k % nums.length. This ensures that if 'k' is larger than the array length, it will still give the correct rotation.
+Reverse the Whole Array:
+
+Reverse the entire array. This will bring the last elements to the front.
+Reverse the First 'k' Elements:
+
+Reverse the first 'k' elements of the array. This step ensures that the previously moved last elements are in their correct order.
+Reverse the Remaining Elements:
+
+Reverse the remaining elements of the array (from index 'k' to the end). This step corrects the order of the elements that were initially at the front of the array.
+Return the Rotated Array:
+
+The array is now rotated by 'k' steps as required.
+
+Complexity
+Time complexity:
+O(n)
+Space complexity:
+O(1)
+Code
+function rotate(nums, k) {
+    if (nums.length === 0 || k <= 0) {
+        return;
+    }
+    
+    k = k % nums.length;
+    
+    // Reverse the entire array
+    reverse(nums, 0, nums.length - 1);
+    
+    // Reverse the first 'k' elements
+    reverse(nums, 0, k - 1);
+    
+    // Reverse the remaining elements
+    reverse(nums, k, nums.length - 1);
+}
+
+function reverse(nums, start, end) {
+    while (start < end) {
+        let temp = nums[start];
+        nums[start] = nums[end];
+        nums[end] = temp;
+        start++;
+        end--;
+    }
+}
