@@ -9,7 +9,7 @@ function productExceptSelf(nums) {
         leftProduct *= nums[i];
     }
 
-    // Calculate the product of all elements to the right of each element and multiply with the existing result.
+    // Calculate the product of all elements to the  right of each element and multiply with the existing result.
     let rightProduct = 1;
     for (let i = n - 1; i >= 0; i--) {
         result[i] *= rightProduct;
