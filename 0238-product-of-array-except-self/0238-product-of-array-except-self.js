@@ -3,7 +3,7 @@ function productExceptSelf(nums) {
     const result = [];
 
     // Calculate the product of all elements to the left of each element.
-    let leftProduct = 1;
+    let leftProduct = 1; 
     for (let i = 0; i < n; i++) {
         result[i] = leftProduct;
         leftProduct *= nums[i];
