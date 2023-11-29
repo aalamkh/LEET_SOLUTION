@@ -1,6 +1,6 @@
 function productExceptSelf(nums) {
     const n = nums.length; 
-    const result = [];
+    const result = []; 
 
     // Calculate the product of all elements to the left of each element.
     let leftProduct = 1; 
