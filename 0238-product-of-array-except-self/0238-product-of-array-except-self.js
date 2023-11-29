@@ -1,5 +1,5 @@
 function productExceptSelf(nums) {
-    const n = nums.length;
+    const n = nums.length; 
     const result = [];
 
     // Calculate the product of all elements to the left of each element.
