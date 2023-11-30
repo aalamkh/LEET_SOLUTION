@@ -7,7 +7,7 @@ class Solution {
         m.put('X', 10);
         m.put('L', 50);
         m.put('C', 100);
-        m.put('D', 500);
+        m.put('D', 500); 
         m.put('M', 1000);
         
         int ans = 0;
