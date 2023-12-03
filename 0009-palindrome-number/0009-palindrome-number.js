@@ -7,5 +7,5 @@ var isPalindrome = function(x) {
      return false
    }else{
   return x == x.toString().split("").reverse().join("")
-   }
+   } 
 }
