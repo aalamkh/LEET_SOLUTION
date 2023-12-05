@@ -4,7 +4,7 @@ class Solution {
         
         m.put('I', 1);
         m.put('V', 5);
-        m.put('X', 10);
+        m.put('X', 10); 
         m.put('L', 50);
         m.put('C', 100);
         m.put('D', 500);   
