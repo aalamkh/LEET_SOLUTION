@@ -5,7 +5,7 @@ var hIndex = function(citations) {
     for (let i = 0; i < citations.length; i++) {
         if (citations[i] >= i + 1) {
             h = i + 1; // Update the H-Index if the condition is met.
-        } else { 
+        } else {  
             break; // Stop if the condition is no longer met because of the descending sort.
         }
     }
