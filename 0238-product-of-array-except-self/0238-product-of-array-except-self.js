@@ -6,7 +6,7 @@ function productExceptSelf(nums) {
     let leftProduct = 1; 
     for (let i = 0; i < n; i++) { 
         result[i] = leftProduct; 
-        leftProduct *= nums[i];
+        leftProduct *= nums[i]; 
     } 
 
     // Calculate the product of all elements to the  right of each element and multiply with the existing result. 
