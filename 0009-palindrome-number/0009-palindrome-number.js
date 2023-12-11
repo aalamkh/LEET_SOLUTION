@@ -8,4 +8,4 @@ var isPalindrome = function(x) {
    }else{ 
   return x == x.toString().split("").reverse().join("")
    } 
-}
+} 
